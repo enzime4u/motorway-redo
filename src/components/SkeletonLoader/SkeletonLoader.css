@@ -1,0 +1,26 @@
+.skeleton {
+    width: calc(var(--size) * 2.5);
+    height: calc(var(--size) * 2.5);
+    object-fit: cover;
+    grid-column: auto / span 2;
+    border-radius: 5px;
+    clip-path: path("M90,10 C100,0 100,0 110,10 190,90 190,90 190,90 200,100 200,100 190,110 190,110 110,190 110,190 100,200 100,200 90,190 90,190 10,110 10,110 0,100 0,100 10,90Z");
+    transition: clip-path 0.25s, filter 0.75s;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+.skeleton:nth-child(5n - 1) {
+    grid-column: 2 / span 2;
+}
+
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
